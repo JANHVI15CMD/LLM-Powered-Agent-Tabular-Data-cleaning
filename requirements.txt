@@ -1,0 +1,24 @@
+# Core dependencies
+streamlit==1.38.0
+pandas==2.2.2
+numpy==2.1.1
+scipy==1.11.4
+
+# LLM providers
+openai>=1.55.3
+google-generativeai>=0.8.3
+
+# Configuration and utilities
+pyyaml==6.0.2
+python-dotenv==1.0.1
+
+# Testing
+pytest==8.3.3
+pytest-cov==4.1.0
+pytest-timeout==2.2.0
+
+# Data validation
+jsonschema==4.20.0
+
+# Logging and monitoring
+colorlog==6.8.0

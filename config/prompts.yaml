@@ -1,0 +1,101 @@
+code_generation: |
+  You are an expert data cleaning specialist. Generate Pandas code to clean the dataset based on the instruction.
+  
+  DATASET INFORMATION:
+  Schema: {schema}
+  Sample rows (first 5): {sample_rows}
+  
+  USER INSTRUCTION: {instruction}
+  
+  EXAMPLES OF CORRECT OUTPUT:
+  Example 1 - Remove nulls:
+  df = df.dropna(subset=['Age'])
+  
+  Example 2 - Remove duplicates:
+  df = df.drop_duplicates()
+  
+  Example 3 - Filter rows:
+  df = df[df['Age'] > 18]
+  
+  STRICT RULES:
+  1. Output ONLY executable Python code (no explanations, no markdown)
+  2. Do NOT include any import statements
+  3. Variable 'df' is the DataFrame (already available)
+  4. Variable 'pd' is pandas (already imported)
+  5. Always assign result back to 'df'
+  6. Do NOT use file operations (read_csv, to_csv, etc.)
+  7. Verify column names match the schema exactly
+  8. Handle edge cases (check if columns exist before operations)
+  
+  Generate the cleaning code now:
+
+error_correction: |
+  The following code failed with an error. Fix it.
+  
+  FAILED CODE:
+  {code}
+  
+  ERROR MESSAGE:
+  {error}
+  
+  DATASET SCHEMA:
+  {schema}
+  
+  ORIGINAL INSTRUCTION:
+  {instruction}
+  
+  DEBUGGING CHECKLIST:
+  1. Are all column names spelled correctly?
+  2. Do the columns exist in the dataset?
+  3. Are data types compatible with operations?
+  4. Are there edge cases (empty dataframe, all nulls, etc.)?
+  5. Is the logic correct for the instruction?
+  
+  Output ONLY the corrected code (no explanations):
+
+instruction_decomposition: |
+  Break down this complex data cleaning instruction into simple, sequential steps.
+  
+  Complex Instruction: {instruction}
+  
+  Output format (numbered list of atomic operations):
+  1. [First simple operation]
+  2. [Second simple operation]
+  ...
+  
+  Rules:
+  - Each step should be a single, clear operation
+  - Steps should be in logical order
+  - Each step should be independently executable
+  
+  Decomposed steps:
+
+semantic_validation: |
+  Evaluate if the cleaning operation successfully addressed the user's instruction.
+  
+  INSTRUCTION: {instruction}
+  
+  CHANGES MADE:
+  - Rows before: {rows_before}
+  - Rows after: {rows_after}
+  - Nulls before: {nulls_before}
+  - Nulls after: {nulls_after}
+  - Duplicates before: {duplicates_before}
+  - Duplicates after: {duplicates_after}
+  - Columns before: {columns_before}
+  - Columns after: {columns_after}
+  
+  CODE EXECUTED:
+  {code}
+  
+  Evaluate:
+  1. Was the instruction properly understood?
+  2. Were the correct operations applied?
+  3. Are the results reasonable?
+  
+  Output JSON:
+  {{
+    "instruction_satisfied": true/false,
+    "confidence": "low/medium/high",
+    "reasoning": "brief explanation"
+  }}

@@ -1,0 +1,20 @@
+app:
+  title: "Autonomous LLM Data Cleaner"
+  max_file_size: 10MB
+  sample_rows: 5
+
+llm:
+  provider: "gemini"  # Add this: "openai" or "gemini"
+  model: "gemini-2.5-flash"  # For OpenAI: "gpt-4o-mini"
+  max_retries: 3
+  temperature: 0.1
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  logs: "logs"
+  samples: "data/samples"
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"

@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+
+data/raw/*.csv
+data/processed/*.csv
+
+logs/*.log
+logs/
+
+.DS_Store
+
+.ipynb_checkpoints/
+
+Datasets/
+*.csv
+*.xlsx
